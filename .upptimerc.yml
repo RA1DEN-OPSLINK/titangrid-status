@@ -1,6 +1,9 @@
 owner: RA1DEN-OPSLINK
 repo: titangrid-status
 
+# Keycloak (auth.titangrid.ai) excluded — no public DNS yet (ingress not wired
+# at launch; add back when auth.titangrid.ai A-record created via ExternalDNS).
+
 sites:
   - name: TitanGrid App (Dashboard)
     url: https://app.titangrid.ai
@@ -14,10 +17,6 @@ sites:
     url: https://api.titangrid.ai/api/v1/health
     expectedStatusCodes: [200]
     body: '"status":"healthy"'
-
-  - name: Auth (Keycloak)
-    url: https://auth.titangrid.ai/realms/master
-    expectedStatusCodes: [200]
 
   - name: Container Registry (Harbor)
     url: https://harbor.titangrid.ai/api/v2.0/ping
