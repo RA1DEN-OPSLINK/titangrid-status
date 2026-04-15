@@ -1,11 +1,6 @@
 owner: RA1DEN-OPSLINK
 repo: titangrid-status
 
-# Notification channels (add PAT once set up)
-# assignees: []
-# status-website-theme: default
-
-# Monitored sites — TitanGrid production endpoints
 sites:
   - name: TitanGrid App (Dashboard)
     url: https://app.titangrid.ai
@@ -21,7 +16,7 @@ sites:
     body: '"status":"healthy"'
 
   - name: Auth (Keycloak)
-    url: https://auth.titangrid.ai/health/ready
+    url: https://auth.titangrid.ai/realms/master
     expectedStatusCodes: [200]
 
   - name: Container Registry (Harbor)
