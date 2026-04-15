@@ -1,0 +1,37 @@
+owner: RA1DEN-OPSLINK
+repo: titangrid-status
+
+# Notification channels (add PAT once set up)
+# assignees: []
+# status-website-theme: default
+
+# Monitored sites — TitanGrid production endpoints
+sites:
+  - name: TitanGrid App (Dashboard)
+    url: https://app.titangrid.ai
+    expectedStatusCodes: [200, 301, 302]
+    icon: https://titangrid.ai/favicon.ico
+
+  - name: TitanGrid Marketing
+    url: https://titangrid.ai
+
+  - name: API Health
+    url: https://api.titangrid.ai/api/v1/health
+    expectedStatusCodes: [200]
+    body: '"status":"healthy"'
+
+  - name: Auth (Keycloak)
+    url: https://auth.titangrid.ai/health/ready
+    expectedStatusCodes: [200]
+
+  - name: Container Registry (Harbor)
+    url: https://harbor.titangrid.ai/api/v2.0/ping
+    expectedStatusCodes: [200]
+
+  - name: Observability (Grafana)
+    url: https://grafana.titangrid.ai/api/health
+    expectedStatusCodes: [200]
+
+  - name: Notifications (ntfy)
+    url: https://ntfy.titangrid.ai/v1/health
+    expectedStatusCodes: [200]
